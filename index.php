@@ -2,6 +2,8 @@
 
 require_once "app/init.php";
 
+$auth->build();
+
 ?>
 
 <!doctype html>
