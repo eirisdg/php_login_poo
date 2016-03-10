@@ -2,6 +2,22 @@
 
 require_once "app/init.php";
 
+if (!empty($_POST)) {
+	$email = $_POST["email"];
+	$username = $_POST["username"];
+	$password = $_POST["password"];
+
+	$created = $auth->create([
+		'email' => $email,
+		'username' => $username,
+		'password' => $password
+		]);
+
+	if ($created) {
+		header('Location: index.php');
+	}
+}
+
 ?>
 
 <!doctype html>
